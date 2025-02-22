@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
     <link rel="stylesheet" href="styleContact.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
 </head>
 <a href="index.html" class="back-button">
     ← Back to home
@@ -36,8 +38,27 @@
             <textarea id="message" name="message" rows="4" required></textarea>
 
             <button type="submit">Send Message</button>
+            <form class="contact-form" onsubmit="sendEmail(event)">
+
         </form>
     </div>
-
+    <script>
+        (function() {
+            emailjs.init("OM0lJ5m264st9nSfD"); // Replace with your EmailJS User ID
+        })();
+     
+        function sendEmail(event) {
+            event.preventDefault();
+     
+            emailjs.sendForm("service_ky8g1bb", "template_qaacjhsD", event.target)
+            .then(function(response) {
+                alert("Message sent successfully!");
+                document.querySelector(".contact-form").reset(); // Clear form after submission
+            }, function(error) {
+                alert("Failed to send message. Try again later.");
+            });
+        }
+     </script>
+     
 </body>
 </html>
