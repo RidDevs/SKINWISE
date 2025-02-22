@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skin Condition Assessment</title>
+    <meta name="description" content="Skin Condition Assessment Questionnaire" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="gradient-background min-h-screen p-4 sm:p-6 lg:p-8">
+    <div class="max-w-2xl mx-auto space-y-8 fade-in">
+        <a href="index.html" class="absolute top-6 left-6 px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition">
+            ← Back to home
+        </a>
+
+        <header class="text-center space-y-4">
+            <h1 class="text-4xl font-bold text-[#2C5282] tracking-tight">
+                SKIN CONDITION ASSESSMENT
+            </h1>
+            <p class="text-gray-600 text-lg">
+                Please answer a few questions to help us understand your symptoms
+            </p>
+        </header>
+
+        <!-- Progress Bar -->
+        <div class="relative pt-4">
+            <div class="overflow-hidden h-3 mb-4 text-xs flex rounded-full bg-blue-100">
+                <div id="progress-bar" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-gradient-to-r from-blue-400 to-blue-600 transition-all duration-500 ease-in-out" style="width: 20%">
+                </div>
+            </div>
+            <span id="question-counter" class="text-sm text-gray-600 font-medium">Question 1 of 5</span>
+        </div>
+
+        <!-- Question Card -->
+        <div id="question-card" class="p-8 bg-white shadow-xl rounded-2xl transition-all duration-300 hover:shadow-2xl card-shadow">
+            <div class="space-y-6">
+                <h2 id="question-text" class="text-2xl font-semibold text-gray-800"></h2>
+                <div id="options-container" class="grid gap-4"></div>
+            </div>
+            <div class="flex justify-between mt-6">
+                <button class="btn bg-gray-200 hover:bg-gray-300 text-gray-700 py-2 px-4 rounded" onclick="goBack()">Back</button>
+                <button class="btn bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded" onclick="goForward()">Next</button>
+            </div>
+        </div>
+
+        <!-- Summary Section (Initially Hidden) -->
+        <div id="summary" class="hidden p-8 bg-white shadow-xl rounded-2xl transition-all duration-300 hover:shadow-2xl card-shadow">
+            <h2 class="text-2xl font-semibold text-gray-800">Summary</h2>
+            <div id="summary-content" class="mt-4 space-y-2"></div>
+            <h3 class="text-xl font-bold text-blue-600 mt-4">Prediction:</h3>
+            <p id="prediction-text" class="text-lg text-gray-700"></p>
+            <button class="mt-6 btn bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded" onclick="restart()">Restart</button>
+            <!-- Warning Message (Initially Hidden) -->
+            <p id="warning-text" class="text-red-600 font-semibold hidden mt-4"></p>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
