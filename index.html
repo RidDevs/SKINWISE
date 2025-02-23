@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skin Disease Detector</title>
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="styleIndex.css"> 
 </head>
 <body>
     <header class="header">
@@ -13,11 +13,21 @@
     </header>
     
     <main class="main-container">
-        <section class="upload-section">
-            <h2>ANSWER FEW QUESTIONS</h2>
-            <p>Use our model to analyze your skin Issues.</p>
-            <button class="btn" onclick="location.href='quiz1.html'">Get Started V 1.0</button>
-            <button class="btn" onclick="location.href='quiz2.html'">Get Started, V 1.1</button>
+        <section class="dual-section">
+            <div class="option-section">
+                <h2>ANSWER A FEW QUESTIONS</h2>
+                <p>Use our model to analyze your skin issues.</p>
+                <button class="btn" onclick="location.href='quiz1.html'">Get Started V 1.0</button>
+                <button class="btn" onclick="location.href='quiz2.html'">Get Started V 1.1</button>
+            </div>
+            <div class="divider"></div>
+            <div class="option-section">
+                <h2>UPLOAD AN IMAGE</h2>
+                <p>Let AI analyze your skin issue from an image.</p>
+                <label class="bttn" for="skinImage">Choose File</label>
+                <input type="file" id="skinImage" accept="image/*" style="display: none;">
+                <button class="btn" onclick="analyzeImage()">Upload & Analyze</button>
+            </div>
         </section>
         
         <section class="features">
@@ -60,8 +70,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            z-index: 1000; 
-            
+            z-index: 1000;
         }
         .navbar a {
             color: white;
@@ -72,6 +81,36 @@
         .navbar a:hover {
             background-color: #575757;
         }
+        .dual-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .option-section {
+            flex: 1;
+            text-align: center;
+        }
+        .divider {
+            width: 2px;
+            background-color: #ccc;
+            height: 100px;
+        }
+        .bttn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .bttn:hover {
+            background-color: #0056b3;
+        }
     </style>
 
     <div class="navbar">
@@ -81,5 +120,16 @@
         <a href="contact.html">Feedback</a>
         <a href="diseases.html">Learn About Diseases</a>
     </div>
+    
+    <script>
+        function analyzeImage() {
+            let fileInput = document.getElementById('skinImage');
+            if (fileInput.files.length === 0) {
+                alert('Please select an image first!');
+                return;
+            }
+            alert('Image uploaded for analysis! (Feature coming soon)');
+        }
+    </script>
 </body>
 </html>
