@@ -39,6 +39,19 @@ body {
 .btn:hover {
     background-color: #0056b3;
 }
+.bttn {
+    background-color: #694282;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.bttn:hover {
+    background-color: #0056b3;
+}
 
 .features {
     display: flex;
