@@ -17,34 +17,41 @@
     </div>
 
     <script>
-       const API_URL = "http://localhost:3000/api/gemini"; 
+        // Use this when running locally
+        // const API_URL = "http://localhost:3000/api/gemini";
 
-async function sendMessage() {
-    const inputField = document.getElementById("userInput");
-    const chatbox = document.getElementById("chatbox");
-    const userMessage = inputField.value.trim();
-    if (!userMessage) return;
+        // Replace this with your deployed backend URL once it's hosted
+        const API_URL = "https://skin-app-v5c1.onrender.com"; 
 
-    chatbox.innerHTML += `<p><strong>You:</strong> ${userMessage}</p>`;
-    inputField.value = "";
+        async function sendMessage() {
+            const inputField = document.getElementById("userInput");
+            const chatbox = document.getElementById("chatbox");
+            const userMessage = inputField.value.trim();
+            if (!userMessage) return;
 
-    try {
-        const response = await fetch(API_URL, { 
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ prompt: userMessage })
-        });
+            chatbox.innerHTML += `<p><strong>You:</strong> ${userMessage}</p>`;
+            inputField.value = "";
 
-        const data = await response.json();
-        chatbox.innerHTML += `<p><strong>Bot:</strong> ${data.output}</p>`;
-        chatbox.scrollTop = chatbox.scrollHeight;
+            try {
+                const response = await fetch(API_URL, { 
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ prompt: userMessage })
+                });
 
-    } catch (error) {
-        chatbox.innerHTML += `<p><strong>Bot:</strong> Error connecting to server.</p>`;
-        console.error("Error:", error);
-    }
-}
+                if (!response.ok) {
+                    throw new Error("Server error. Please try again.");
+                }
 
+                const data = await response.json();
+                chatbox.innerHTML += `<p><strong>Bot:</strong> ${data.output || "No response"}</p>`;
+                chatbox.scrollTop = chatbox.scrollHeight;
+
+            } catch (error) {
+                chatbox.innerHTML += `<p><strong>Bot:</strong> Error connecting to server.</p>`;
+                console.error("Error:", error);
+            }
+        }
     </script>
 </body>
 </html>
