@@ -5,23 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skin Disease Chatbot</title>
     <link rel="stylesheet" href="styleChat.css">
+    <style>
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 15px;
+            background-color: #1E3A8A;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #1D4ED8;
+        }
+        .container {
+            max-width: 600px;
+            margin: 80px auto;
+            text-align: center;
+        }
+        #chatbox {
+            border: 1px solid #ddd;
+            padding: 10px;
+            height: 300px;
+            overflow-y: auto;
+            background: #f9f9f9;
+            text-align: left;
+        }
+        .input-container {
+            display: flex;
+            margin-top: 10px;
+        }
+        input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #1E3A8A;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #1D4ED8;
+        }
+    </style>
 </head>
 <body>
+
+    <a href="index.html" class="back-button">← Back to Home</a>
+
     <div class="container">
         <h2>Skin Disease Chatbot</h2>
         <div id="chatbox"></div>
         <div class="input-container">
-            <input type="text" id="userInput" placeholder="Ask about a skin disease...">
+            <input type="text" id="userInput" placeholder="Ask about a skin disease..." onkeypress="handleKeyPress(event)">
             <button onclick="sendMessage()">Send</button>
         </div>
     </div>
 
     <script>
-        // Use this when running locally
-        // const API_URL = "http://localhost:3000/api/gemini";
-
-        // Replace this with your deployed backend URL once it's hosted
-        const API_URL = "https://skin-app-v5c1.onrender.com"; 
+        const API_URL = "http://localhost:3000/chat";  // Using localhost API
 
         async function sendMessage() {
             const inputField = document.getElementById("userInput");
@@ -33,7 +82,7 @@
             inputField.value = "";
 
             try {
-                const response = await fetch(API_URL, { 
+                const response = await fetch(API_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ prompt: userMessage })
@@ -44,12 +93,18 @@
                 }
 
                 const data = await response.json();
-                chatbox.innerHTML += `<p><strong>Bot:</strong> ${data.output || "No response"}</p>`;
+                chatbox.innerHTML += `<p><strong>Bot:</strong> ${data.response || "No response"}</p>`; // Ensure correct response key
                 chatbox.scrollTop = chatbox.scrollHeight;
 
             } catch (error) {
                 chatbox.innerHTML += `<p><strong>Bot:</strong> Error connecting to server.</p>`;
                 console.error("Error:", error);
+            }
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === "Enter") {
+                sendMessage();
             }
         }
     </script>
