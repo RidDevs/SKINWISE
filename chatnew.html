@@ -6,12 +6,60 @@
     <title>Skin Disease Chatbot</title>
     <link rel="stylesheet" href="styleChat.css">
 </head>
+<style>
+    .back-button {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        padding: 10px 15px;
+        background-color: #1E3A8A;
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        transition: background 0.3s ease;
+    }
+    .back-button:hover {
+        background-color: #1D4ED8;
+    }
+    .container {
+        max-width: 600px;
+        margin: 80px auto;
+        text-align: center;
+    }
+    #chatbox {
+        border: 1px solid #ddd;
+        padding: 10px;
+        height: 300px;
+        overflow-y: auto;
+        background: #f9f9f9;
+        text-align: left;
+    }
+    .input-container {
+        display: flex;
+        margin-top: 10px;
+    }
+    input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+    button {
+        padding: 10px 15px;
+        background-color: #1E3A8A;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #1D4ED8;
+    }
+</style>
+
 <body>
-    <div class="max-w-2xl mx-auto space-y-8 fade-in">
-        <a href="index.html" class="absolute top-6 left-6 px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition">
-          ← ← Back to Home
-        </a></div>
-   
+    
+    <a href="index.html" class="back-button">← Back to Home</a>
 
     <div class="container">
         <h2>Skin Disease Chatbot</h2>
