@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/chat";
+const API_URL = "https://skin-app-v5c1.onrender.com";
 
 async function sendMessage() {
   const inputField = document.getElementById("userInput");
