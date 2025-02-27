@@ -45,14 +45,17 @@ body {
     font-size: 16px;
     font-weight: bold;
     color: white;
-    background-color: #28a745; /* Green instead of blue */
+    background-color: #cd1414; /* Red color */
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
+
 .bttn:hover {
-    background-color: #218838;
+    background-color: #cd1836; /* Slightly darker red on hover */
 }
+
+
 .features {
     display: flex;
     justify-content: space-between;
@@ -70,4 +73,74 @@ body {
 .icon {
     font-size: 30px;
     margin-bottom: 10px;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding-top: 50px;
+}
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+}
+.navbar a:hover {
+    background-color: #575757;
+}
+.dual-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+.option-section {
+    flex: 1;
+    text-align: center;
+}
+.divider {
+    width: 2px;
+    background-color: #ccc;
+    height: 100px;
+}
+.bn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(12, 10, 10);
+    background-color: #37ff00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.bn:hover {
+    background-color: #77cf87;
+}
+.bttn {
+display: inline-block;
+padding: 10px 20px;
+font-size: 16px;
+font-weight: bold;
+color: white;
+background-color: #cd1414; /* Red color */
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.bttn:hover {
+background-color: #cd1836; /* Slightly darker red on hover */
 }

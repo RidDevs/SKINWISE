@@ -22,10 +22,10 @@
             </div>
             <div class="divider"></div>
             <div class="option-section">
-                <h2>UPLOAD AN IMAGE</h2>
+                <h2>UPLOAD AN IMAGE </h2>
                 <p>Let AI analyze your skin issue from an image.</p>
                 
-                <button class="btn" onclick="location.href='model.html'">Upload Image</button>
+                <button class="bttn" onclick="location.href='model.html'">Upload Image(UNDER DEVELOPMENT)</button>
             </div>
             <div class="divider"></div>
             <div class="option-section">
@@ -56,68 +56,12 @@
         
         <h3>Reach out to a specialized Dermatologist</h3>
         <p>
-            <button class="bttn" onclick="window.open('https://public.iadvl.org/find-a-dermatologist', '_blank')">
+            <button class="bn" onclick="window.open('https://public.iadvl.org/find-a-dermatologist', '_blank')">
                 Find a dermatologist near you
             </button>
         </p>
     </main>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            padding-top: 50px;
-        }
-        .navbar {
-            background-color: #333;
-            overflow: hidden;
-            display: flex;
-            padding: 10px 20px;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            padding: 14px 20px;
-            display: block;
-        }
-        .navbar a:hover {
-            background-color: #575757;
-        }
-        .dual-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-            padding: 20px;
-        }
-        .option-section {
-            flex: 1;
-            text-align: center;
-        }
-        .divider {
-            width: 2px;
-            background-color: #ccc;
-            height: 100px;
-        }
-        .bttn {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
-            font-weight: bold;
-            color: white;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .bttn:hover {
-            background-color: #0056b3;
-        }
-    </style>
 
     <div class="navbar">
         <a href="index.html">Home</a>
@@ -127,15 +71,6 @@
         <a href="diseases.html">Learn About Diseases</a>
     </div>
     
-    <script>
-        function analyzeImage() {
-            let fileInput = document.getElementById('skinImage');
-            if (fileInput.files.length === 0) {
-                alert('Please select an image first!');
-                return;
-            }
-            alert('Image uploaded for analysis! (Feature coming soon)');
-        }
-    </script>
+    
 </body>
 </html>
