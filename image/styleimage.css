@@ -104,7 +104,7 @@ button:hover {
 /* Back Button */
 .back-button {
     position: absolute;
-    top: 20px;
+    top: 125px;
     left: 20px;
     background-color: #2962ff;
     color: white;
