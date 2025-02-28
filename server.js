@@ -8,6 +8,11 @@ const PORT = 3000;
 
 // Middleware
 app.use(cors());
+app.use(cors({
+  origin: ["https://riddevs.github.io/SKIN-APP/chatnew.html"], // Replace with your actual GitHub Pages URL
+  methods: ["POST"],
+  allowedHeaders: ["Content-Type"]
+}));
 app.use(express.json());
 
 // Gemini API Setup
