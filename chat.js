@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/chat"; // Make sure the endpoint is correct
+const API_URL = "https://skinwise-bgky.onrender.com"; // Make sure the endpoint is correct
 
 document.addEventListener("DOMContentLoaded", function () {
   const inputField = document.getElementById("userInput");
