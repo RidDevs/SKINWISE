@@ -28,13 +28,7 @@
         margin: 80px auto;
         text-align: center;
     }
-    #chatbox {
-        border: 1px solid #ddd;
-        padding: 10px;
-        height: 300px;
-        overflow-y: auto;
-        background: #f9f9f9;
-        text-align: left;
+    
     }
     .input-container {
         display: flex;
@@ -55,8 +49,37 @@
     button:hover {
         background-color: #1D4ED8;
     }
+    .logo {
+    height: 80px;
+    width: auto;
+}
+.brandname {
+    font-size: 50px;
+    font-weight: bold;
+    font-family: "Arial Black", sans-serif;
+    
+    background: linear-gradient(45deg, #34e315, #ff4b2b);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.header {
+    background-color: #7a8ba4;
+    color: white;
+    padding: 10px 40px;
+    display: flex;
+    
+    align-items: flex-end; /* Align to the bottom */
+    justify-content: center;
+    gap: 10px;
+    height: 120px;
+}
 </style>
-
+    <header class="header">
+        <img src="1000233440.png" alt="Skin Disease Detector Logo" class="logo">
+        <h1 class="brandname">SKINWISE</h1>
+        <br>
+        <h1>AI CHATBOX</h1>
+    </header>
 <body>
     
     <a href="index.html" class="back-button">← Back to Home</a>
