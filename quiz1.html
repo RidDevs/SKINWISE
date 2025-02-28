@@ -8,7 +8,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css" />
 </head>
-
+<header class="header">
+    <img src="1000233440.png" alt="Skin Disease Detector Logo" class="logo">
+    <h1 class="brandname">SKINWISE</h1><br>
+    <h1 style="font-size: 3em; color: black; font-family: 'Arial Black', sans-serif;">SKIN DISEASE QUESTIONNAIRE</h1>
+</header>
 <body class="gradient-background min-h-screen p-4 sm:p-6 lg:p-8">
     <div class="max-w-2xl mx-auto space-y-8 fade-in">
         <a href="index.html" class="absolute top-6 left-6 px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition">
@@ -61,4 +65,28 @@
 
     <script src="script.js"></script>
 </body>
+<style>.logo {
+    height: 80px;
+    width: auto;
+}
+.brandname {
+    font-size: 50px;
+    font-weight: bold;
+    font-family: "Arial Black", sans-serif;
+    
+    background: linear-gradient(45deg, #34e315, #ff4b2b);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.header {
+    background-color: #82c0ff;
+    color: white;
+    padding: 10px 40px;
+    display: flex;
+    
+    align-items: flex-end; /* Align to the bottom */
+    justify-content: center;
+    gap: 10px;
+    height: 120px;
+}
 </html>
