@@ -7,7 +7,7 @@ body {
 }
 
 .header {
-    background-color: #007bff;
+    background-color: #00008b;
     color: white;
     padding: 10px 40px;
     display: flex;
@@ -154,9 +154,9 @@ body {
 .brandname {
     font-size: 50px;
     font-weight: bold;
-    font-family: "Arial Black", sans-serif;
+    font-family: "Bell MT", sans-serif;
     
-    background: linear-gradient(45deg, #34e315, #ff4b2b);
+    background-color: #228b22;
     -webkit-background-clip: text;
     color: transparent;
 }
