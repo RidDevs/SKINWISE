@@ -1,0 +1,123 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+/* Brand Name */
+.brandname {
+    font-size: 50px;
+    font-weight: bold;
+    font-family: "Arial Black", sans-serif;
+    background: linear-gradient(45deg, #34e315, #ff4b2b);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Header */
+.header {
+    background-color: #cbdef3;
+    padding: 5px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 80px;
+}
+
+/* Logo */
+.logo {
+    height: 80px;
+    width: auto;
+}
+
+/* Main Container */
+.container {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* File Input Styling */
+input[type="file"] {
+    display: none; /* Hide default input */
+}
+
+.file-label {
+    display: inline-block;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.file-label:hover {
+    background-color: #e0e0e0;
+}
+
+/* Button Styling */
+button {
+    background-color: #1E3A8A;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #1D4ED8;
+    transform: scale(1.05);
+}
+
+/* Image Preview */
+#previewImage {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10px;
+    display: none; /* Initially hidden */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading Text */
+.loading {
+    display: none;
+    font-size: 18px;
+    color: #ff6600;
+    font-weight: bold;
+}
+
+/* Back Button */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #2962ff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.back-button:hover {
+    background-color: #0039cb;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}

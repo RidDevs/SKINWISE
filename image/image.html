@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skinwise - AI Skin Disease Detector</title>
+    <link rel="stylesheet" href="styleimage.css"> 
+</head>
+<body>
+
+    <header class="header">
+        <img src="1000233440.png" alt="Skin Disease Detector Logo" class="logo">
+        <h1 class="brandname">SKINWISE</h1><br>
+        <h1 style="font-size: 3em; color: black; font-family: 'Arial Black', sans-serif;">SKIN DISEASE IMAGE MODEL</h1>
+    </header>
+
+    <a href="../index.html" class="back-button">← Back to Home</a>
+
+    <div class="container">
+        <h2>Try our AI skin disease detector</h2>
+
+        <!-- File Upload Input -->
+        <label for="imageInput" class="file-label">Choose an image</label>
+        <input type="file" id="imageInput" accept="image/*">
+
+        <!-- Image Preview -->
+        <img id="previewImage" alt="Image Preview">
+
+        <!-- Loading Text -->
+        <p class="loading" id="loadingText">Analyzing... Please wait.</p>
+
+        <!-- Analyze Button -->
+        <button onclick="analyzeImage()">Analyze Image</button>
+
+        <h3>Analysis Result:</h3>
+        <p id="result"></p>
+    </div>
+
+    <script src="image.js"></script>
+</body>
+</html>
