@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Conditions Overview</title>
+    <style>
+        /* General Body and Page Layout */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f7ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            min-height: 100vh; /* Ensures the body takes full height */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #005b8a;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        h2 {
+            background-color: #e1efff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Content Container */
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            flex: 1; /* Allows container to expand and take available space */
+        }
+
+        /* List Styling for Conditions */
+        .condition-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .condition-list li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #d8f0ff;
+            border-radius: 5px;
+        }
+
+        .condition-list li a {
+            color: #005b8a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .condition-list li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #005b8a;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        .logo {
+        height: 100px;
+        width: auto;
+        }
+        .brandname {
+        font-size: 50px;
+        font-weight: bold;
+        font-family: "Arial Black", sans-serif;
+    
+        background: linear-gradient(45deg, #34e315, #ff4b2b);
+        -webkit-background-clip: text;
+        color: transparent;
+        }
+        .back-button {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        padding: 10px 15px;
+        background-color: #1E3A8A;
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        transition: background 0.3s ease;
+    }
+    .back-button:hover {
+        background-color: #1D4ED8;
+    }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="1000233440.png" alt="Skin Disease Detector Logo" class="logo">
+        <h1 class="brandname">SKINWISE   Skin Conditions Overview</h1>
+     
+    </header>
+    <a href="index.html" class="back-button">← Back to Home</a>
+    
+    <div class="container">
+        <h2>✅ Mild Conditions</h2>
+        <ul class="condition-list">
+            <li><a href="diseases/Xerosis.html">Dry Skin (Xerosis) – Linked to mild dryness</a></li>
+            <li><a href="diseases/ContactDermatitis.html">Contact Dermatitis – Often caused by skincare products or allergens</a></li>
+            <li><a href="diseases/MildEczema.html">Mild Eczema – Identified by dryness and mild irritation</a></li>
+            <li><a href="diseases/CommomSkinIrritations.html">Common Skin Irritation – General skin discomfort with no severe symptoms</a></li>
+        </ul>
+
+        <h2>⚠ Moderate to Severe Conditions</h2>
+        <ul class="condition-list">
+            <li><a href="diseases/food-allergy-skin-reaction.html">Food Allergy (Skin Reaction) – If rash appears due to food triggers</a></li>
+            <li><a href="diseases/psoriasis.html">Psoriasis – Severe, chronic condition lasting more than a month</a></li>
+            <li><a href="diseases/severe-eczema.html">Severe Eczema – If symptoms are persistent and severe</a></li>
+        </ul>
+    </div>
+
+</body>
+
+</html>
+
