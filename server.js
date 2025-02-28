@@ -18,7 +18,7 @@ if (!apiKey) {
 }
 
 const genAI = new GoogleGenerativeAI(apiKey);
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-8b" }); // Or your preferred model
+const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" }); // Or your preferred model
 
 // Chatbot API Route
 app.post("/chat", async (req, res) => {

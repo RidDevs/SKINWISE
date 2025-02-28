@@ -6,6 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const chatbox = document.getElementById("chatbox");
 
   sendButton.addEventListener("click", sendMessage); // Attach event listener
+  inputField.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); // Prevent default newline behavior
+        sendMessage();
+    }});
 
   async function sendMessage() {
     const userMessage = inputField.value.trim();

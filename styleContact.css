@@ -101,3 +101,14 @@ body {
 .contact-form button:hover {
     background-color: #0056b3;
 }
+
+.logo {
+    height: 80px;
+    width: auto;
+}
+
+/* Specific Style for Message Type Label */
+.contact-form label[for="messageType"] {
+    font-weight: bold; /* Match other labels */
+    /* Add any other styles if needed to match the other labels */
+}
