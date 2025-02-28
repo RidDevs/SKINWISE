@@ -36,7 +36,7 @@ app.post("/analyze-image", upload.single("image"), async (req, res) => {
         const imageBase64 = req.file.buffer.toString("base64");
 
         // ✅ Send image to Gemini API for analysis
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
         const result = await model.generateContent([
             { text: "Analyze this image and detect any skin disease." },
