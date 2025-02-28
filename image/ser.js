@@ -23,7 +23,7 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
 app.use(express.json());
-app.use(cors({ origin: "https://your-github-username.github.io" }));
+app.use(cors({ origin: "https://riddevs.github.io/SKIN-APP/image/image.html" }));
 
 // ✅ Image Analysis Route
 app.post("/analyze-image", upload.single("image"), async (req, res) => {
