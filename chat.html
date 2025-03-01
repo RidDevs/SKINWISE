@@ -7,6 +7,23 @@
     <link rel="stylesheet" href="styleChat.css">
 </head>
 <style>
+     .bttn {
+        position: absolute;
+        top: 20px;
+        left: 200px;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #cd1414;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.bttn:hover {
+    background-color: #cd1836;
+}
     .back-button {
         position: absolute;
         top: 20px;
@@ -97,11 +114,11 @@
     <script src="chat.js"></script> <!-- Separate JavaScript File -->
     <script>
         if (localStorage.getItem("loggedIn") !== "true") {
-            alert("Please log in first!");
+            
             window.location.href = "login.html";
         }
     </script>
-    <button onclick="logout()">Logout</button>
+    <button class="bttn"onclick="logout()">Logout</button>
 
     <script>
         function logout() {
