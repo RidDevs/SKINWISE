@@ -6,25 +6,23 @@
     <title>Skin Disease Detector</title>
     <link rel="stylesheet" href="styleIndex.css"> 
     <link rel="manifest" href="manifest.json">
-
 </head>
 <script>
     if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("service-worker.js")
-        .then(() => console.log("Service Worker Registered"))
-        .catch(err => console.log("Service Worker Registration Failed", err));
+        navigator.serviceWorker.register("service-worker.js")
+            .then(() => console.log("Service Worker Registered"))
+            .catch(err => console.log("Service Worker Registration Failed", err));
     }
-  </script>
-  
+</script>
+
 <body>
     <header class="header">
         <img src="1000233440.png" alt="Skin Disease Detector Logo" class="logo">
         <h1 class="brandname">SKINWISE</h1>
         <br>
         <h1>Skin Disease Detector</h1>
-        
     </header>
-  
+
     <main class="main-container">
         <section class="dual-section">
             <div class="option-section">
@@ -46,7 +44,7 @@
                 <button class="btn" onclick="location.href='chat.html'">CHAT with AI</button>
             </div>
         </section>
-        
+
         <section class="features">
             <div class="feature-card">
                 <div class="icon">🔬</div>
@@ -74,8 +72,6 @@
                 <p>Identify skin issues before they worsen.</p>
             </div>
         </section>
-        
-        
     </main>
 
     <div class="navbar">
@@ -84,11 +80,10 @@
         <a href="contact.html">Contact Us/Feedback</a>
         <a href="diseases.html">Learn About Diseases</a>
         <a href="https://public.iadvl.org/find-a-dermatologist">Find a dermatologist</a>
-        <a href="dasboard.html">Your SkinWiseDashboard</a>
-        <div id="authButton"></div> <a href="login.html"></a></div>
+        <div id="dashboardLink"></div> 
+        <div id="authButton"></div> 
+        <a href="login.html"></a> 
     </div>
-
-    
 
     <script>
         function logout() {
@@ -99,26 +94,32 @@
 
         function updateAuthButton() {
             let authButton = document.getElementById("authButton");
+            let dashboardLink = document.getElementById("dashboardLink");
             if (localStorage.getItem("loggedIn") === "true") {
                 authButton.innerHTML = '<button class="bttn" onclick="logout()">Logout</button>';
+                // Show the dashboard link when logged in
+                dashboardLink.innerHTML = '<a href="dasboard.html">Your SkinWiseDashboard</a>'; 
             } else {
                 authButton.innerHTML = '<a href="login.html"><button class="bttn">Login</button></a>';
+                // Hide the dashboard link when logged out
+                dashboardLink.innerHTML = ''; 
             }
         }
 
         updateAuthButton();
     </script>
+
     <footer class="footer">
         <p>&copy; SKINWISE 2025, skinwise.ai@gmail.com</p> 
     </footer>
 </body>
 <script type="text/javascript">
     function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'as', // Assamese language code
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-      }, 'google_translate_element');
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'as', // Assamese language code
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
     }
-  
+</script>
 </html>
