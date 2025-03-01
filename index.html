@@ -5,7 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skin Disease Detector</title>
     <link rel="stylesheet" href="styleIndex.css"> 
+    <link rel="manifest" href="manifest.json">
+
 </head>
+<script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js")
+        .then(() => console.log("Service Worker Registered"))
+        .catch(err => console.log("Service Worker Registration Failed", err));
+    }
+  </script>
+  
 <body>
     <header class="header">
         <img src="1000233440.png" alt="Skin Disease Detector Logo" class="logo">
