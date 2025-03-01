@@ -25,11 +25,13 @@ const upload = multer({ storage: storage });
 app.use(express.json());
 
 // ✅ CORS setup for GitHub Pages
+app.use(cors());
 app.use(cors({
-    origin: "https://riddevs.github.io/SKIN-APP/image/image.html", // Replace with your GitHub Pages URL
-    methods: ["GET", "POST"],
-    credentials: true
+  origin: ["https://riddevs.github.io/SKIN-APP/chatnew.html"], // Replace with your actual GitHub Pages URL
+  methods: ["POST"],
+  allowedHeaders: ["Content-Type"]
 }));
+app.use(express.json());
 
 // ✅ Image Analysis Route
 app.post("/analyze-image", upload.single("image"), async (req, res) => {
