@@ -39,7 +39,7 @@ async function analyzeImage() {
     formData.append("image", file);
 
     try {
-        const response = await fetch("http://localhost:3000/analyze-image", {
+        const response = await fetch("https://skin-image.onrender.com/analyze-image", {
             method: "POST",
             body: formData
         });
