@@ -31,7 +31,7 @@ app.use(cors({
   methods: ["POST"],
   allowedHeaders: ["Content-Type"]
 }));
-app.use(express.json());
+
 
 // ✅ Image Analysis Route
 app.post("/analyze-image", upload.single("image"), async (req, res) => {
