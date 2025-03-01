@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SkinWise</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 300px;
+            margin: auto;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #2962ff;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0039cb;
+        }
+
+        /* 🔹 Header Styling */
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            height: 70px;
+        }
+
+        .header h1 {
+            margin: 0;
+            line-height: 4;
+        }
+
+        /* 🔹 Logo Styling */
+        .logo {
+            width: 100px; /* Set a fixed size */
+            height: 100px;
+            object-fit: contain;
+        }
+
+        /* 🔹 Brand Name Styling */
+        .brandname {
+            font-size: 36px;
+            font-weight: bold;
+            font-family: "Arial Black", sans-serif;
+            background: linear-gradient(45deg, #34e315, #ff4b2b);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .back-button {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        padding: 10px 15px;
+        background-color: #1E3A8A;
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        transition: background 0.3s ease;
+    }
+    .back-button:hover {
+        background-color: #1D4ED8;
+    }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <img src="1000233440.png" alt="SkinWise Logo" class="logo"> 
+        <h1 class="brandname">SKINWISE</h1>
+    </header>
+
+    <a href="index.html" class="back-button">← Back to Home</a>
+    <div class="container">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Enter Username">
+        <input type="password" id="password" placeholder="Enter Password">
+        <button onclick="login()">Login</button>
+        <p>Don't have an account? <a href="register.html">Register</a></p>
+    </div>
+
+    <script>
+        function login() {
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+
+            let storedUser = localStorage.getItem("username");
+            let storedPass = localStorage.getItem("password");
+
+            
+            if (username === "admin" && password === "raag") {
+                
+                localStorage.setItem("loggedIn", "true");
+                localStorage.setItem("role", "admin");
+                window.location.href = "index.html";
+                return;
+            }
+
+           
+            if (username === storedUser && password === storedPass) {
+                
+                localStorage.setItem("loggedIn", "true");
+                localStorage.setItem("role", "user");
+                window.location.href = "index.html";
+            } else {
+                alert("Invalid username or password!");
+            }
+        }
+
+        
+        if (localStorage.getItem("loggedIn") === "true") {
+            window.location.href = "index.html";
+        }
+    </script>
+
+</body>
+</html>

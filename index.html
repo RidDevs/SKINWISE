@@ -74,7 +74,29 @@
         <a href="contact.html">Contact Us/Feedback</a>
         <a href="diseases.html">Learn About Diseases</a>
         <a href="https://public.iadvl.org/find-a-dermatologist">Find a dermatologist</a>
+        <div id="authButton"></div> <a href="login.html"></a></div>
     </div>
+
+    
+
+    <script>
+        function logout() {
+            localStorage.removeItem("loggedIn");
+            localStorage.removeItem("role");
+            window.location.href = "index.html";
+        }
+
+        function updateAuthButton() {
+            let authButton = document.getElementById("authButton");
+            if (localStorage.getItem("loggedIn") === "true") {
+                authButton.innerHTML = '<button class="bttn" onclick="logout()">Logout</button>';
+            } else {
+                authButton.innerHTML = '<a href="login.html"><button class="bttn">Login</button></a>';
+            }
+        }
+
+        updateAuthButton();
+    </script>
     <footer class="footer">
         <p>&copy; SKINWISE 2025, skinwise.ai@gmail.com</p> 
     </footer>
