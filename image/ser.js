@@ -27,7 +27,7 @@ app.use(express.json());
 // ✅ CORS setup for GitHub Pages
 app.use(cors());
 app.use(cors({
-  origin: ["https://riddevs.github.io/SKIN-APP/chatnew.html"], // Replace with your actual GitHub Pages URL
+  origin: ["https://riddevs.github.io/SKINWISE/image/image.html"], // Replace with your actual GitHub Pages URL
   methods: ["POST"],
   allowedHeaders: ["Content-Type"]
 }));
