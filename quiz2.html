@@ -6,7 +6,7 @@
     <title>Skin Condition Assessment</title>
     <meta name="description" content="Skin Condition Assessment Questionnaire" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles.css" />
+    
 </head>
 <header class="header">
     <img src="1000233440.png" alt="Skin Disease Detector Logo" class="logo">
@@ -65,7 +65,7 @@
     <script>
         if (localStorage.getItem("loggedIn") !== "true") {
             alert("Please log in first!");
-            window.location.href = "../login.html";
+            window.location.href = "login.html";
         }
     </script>
     <button class="bttn" onclick="logout()">Logout</button>
@@ -73,7 +73,7 @@
     <script>
         function logout() {
             localStorage.removeItem("loggedIn");
-            window.location.href = "../index.html";
+            window.location.href = "index.html";
         }
     </script>
 </body>
