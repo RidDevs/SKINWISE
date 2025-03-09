@@ -91,6 +91,41 @@
     height: 120px;
 }
 
+.chat-container {
+    max-width: 600px;
+    height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* User Message (Sent) */
+.user-message {
+    align-self: flex-end;
+    background-color: #1E3A8A;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 15px 15px 0 15px;
+    max-width: 75%;
+    word-wrap: break-word;
+}
+
+/* Bot Message (Received) */
+.bot-message {
+    align-self: flex-start;
+    background-color: #e0e0e0;
+    color: black;
+    padding: 10px 15px;
+    border-radius: 15px 15px 15px 0;
+    max-width: 75%;
+    word-wrap: break-word;
+}
+
 </style>
     <header class="header">
         <img src="1000233440.png" alt="Skin Disease Detector Logo" class="logo">
@@ -104,7 +139,7 @@
 
     <div class="container">
         <h2>Skin Health Chatbot</h2>
-        <div id="chatbox"></div>
+        <div id="chatbox" class="chat-container"></div>
         <div class="input-container">
             <input type="text" id="userInput" placeholder="Ask about a skin disease...">
             <button onclick="sendMessage()">Send</button>
