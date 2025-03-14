@@ -26,7 +26,7 @@ body {
     text-decoration: underline;
 }
 
-/* Back Button */
+
 .back-button {
     position: absolute;
     top: 20px;
@@ -48,7 +48,7 @@ body {
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Contact Container */
+
 .contact-container {
     max-width: 600px;
     margin: 50px auto;
@@ -107,8 +107,7 @@ body {
     width: auto;
 }
 
-/* Specific Style for Message Type Label */
+
 .contact-form label[for="messageType"] {
-    font-weight: bold; /* Match other labels */
-    /* Add any other styles if needed to match the other labels */
+    font-weight: bold; 
 }

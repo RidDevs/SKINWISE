@@ -12,7 +12,7 @@ body {
     padding: 10px 40px;
     display: flex;
     
-    align-items: flex-end; /* Align to the bottom */
+    align-items: flex-end; 
     justify-content: center;
     gap: 10px;
     height: 140px;
@@ -21,13 +21,13 @@ body {
 .header h1 {
     margin: 10;
     line-height: 1.2;
-    margin-bottom: 5px; /* Optional: Add some space at the bottom */
+    margin-bottom: 5px; 
     margin-top: 5px;
 }
 .header h2 {
     margin: 10;
     line-height: 1.2;
-    margin-bottom: 5px; /* Optional: Add some space at the bottom */
+    margin-bottom: 5px; 
     margin-top: 5px;
 }
 

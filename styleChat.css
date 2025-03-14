@@ -96,3 +96,122 @@ button:hover {
     max-width: 75%;
     word-wrap: break-word;
 }
+
+.bttn {
+    position: absolute;
+    top: 20px;
+    left: 200px;
+padding: 10px 15px;
+font-size: 16px;
+font-weight: bold;
+color: white;
+background-color: #cd1414;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.bttn:hover {
+background-color: #cd1836;
+}
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 15px;
+    background-color: #1E3A8A;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+}
+.back-button:hover {
+    background-color: #1D4ED8;
+}
+.container {
+    max-width: 600px;
+    margin: 80px auto;
+    text-align: center;
+}
+
+
+.input-container {
+    display: flex;
+    margin-top: 10px;
+}
+input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+button {
+    padding: 10px 15px;
+    background-color: #1E3A8A;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #1D4ED8;
+}
+.logo {
+height: 80px;
+width: auto;
+}
+.brandname {
+font-size: 50px;
+font-weight: bold;
+font-family: "Arial Black", sans-serif;
+
+background: linear-gradient(45deg, #34e315, #ff4b2b);
+-webkit-background-clip: text;
+color: transparent;
+}
+.header {
+background-color: #7a8ba4;
+color: white;
+padding: 10px 40px;
+display: flex;
+
+align-items: flex-end; 
+justify-content: center;
+gap: 10px;
+height: 120px;
+}
+
+.chat-container {
+max-width: 600px;
+height: 400px;
+overflow-y: auto;
+border: 1px solid #ccc;
+padding: 10px;
+background: #f8f8f8;
+border-radius: 10px;
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+/* User Message (Sent) */
+.user-message {
+align-self: flex-end;
+background-color: #1E3A8A;
+color: white;
+padding: 10px 15px;
+border-radius: 15px 15px 0 15px;
+max-width: 75%;
+word-wrap: break-word;
+}
+
+
+.bot-message {
+align-self: flex-start;
+background-color: #e0e0e0;
+color: black;
+padding: 10px 15px;
+border-radius: 15px 15px 15px 0;
+max-width: 75%;
+word-wrap: break-word;
+}
