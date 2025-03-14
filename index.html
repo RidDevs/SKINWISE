@@ -111,7 +111,7 @@
             if (localStorage.getItem("loggedIn") === "true") {
                 authButton.innerHTML = '<button class="bttn" onclick="logout()">Logout</button>';
                 // Show the dashboard link when logged in
-                dashboardLink.innerHTML = '<a href="dasboard.html">Your SkinWiseDashboard</a>'; 
+                dashboardLink.innerHTML = '<a href="dash/dashboard.html">Your SkinWiseDashboard</a>'; 
             } else {
                 authButton.innerHTML = '<a href="login.html"><button class="bttn">Login</button></a>';
                 // Hide the dashboard link when logged out
