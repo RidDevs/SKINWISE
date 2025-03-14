@@ -105,33 +105,33 @@
     </style>
 </head>
 <header class="header">
-    <img src="../1000233440.png" alt="Skin Disease Detector Logo" class="logo">
-    <h1 class="brandname">SKINWISE</h1><br>
-    <h1 style="font-size: 3em; color: black; font-family: 'Arial Black', sans-serif;">SKIN HEALTH TRACKER</h1>
+    <img src="../1000233440.png" alt="Logo" class="logo">
+    <h1 class="brandname">SKINWISE</h1>
+    <h2>Skin Health Tracker</h2>
 </header>
 <body>
-    <h1 style="text-align: center;">Skin Health Tracker</h1>
-    <a href="../index.html" class="back-button">← Back to home</a>
+    <h1>Track Your Skin Health</h1>
+    <a href="../index.html" class="back-button">← Back to Home</a>
 
     <form id="skinForm">
-        <label for="date">Date:</label>
+        <label>Date:</label>
         <input type="date" id="date" required>
 
-        <label for="hydration">Hydration Level:</label>
+        <label>Hydration Level:</label>
         <select id="hydration">
             <option value="dry">Dry</option>
             <option value="normal">Normal</option>
             <option value="oily">Oily</option>
         </select>
 
-        <label for="texture">Texture:</label>
+        <label>Texture:</label>
         <select id="texture">
             <option value="smooth">Smooth</option>
             <option value="rough">Rough</option>
             <option value="uneven">Uneven</option>
         </select>
 
-        <label for="redness">Redness/Irritation:</label>
+        <label>Redness:</label>
         <select id="redness">
             <option value="none">None</option>
             <option value="mild">Mild</option>
@@ -139,7 +139,7 @@
             <option value="severe">Severe</option>
         </select>
 
-        <label for="acne">Acne/Blemishes:</label>
+        <label>Acne/Blemishes:</label>
         <select id="acne">
             <option value="none">None</option>
             <option value="few">Few</option>
@@ -147,71 +147,95 @@
             <option value="many">Many</option>
         </select>
 
-        <label for="notes">Notes:</label>
+        <label>Notes:</label>
         <textarea id="notes"></textarea>
 
         <button type="button" onclick="addEntry()">Add Entry</button>
     </form>
 
     <div class="table-container">
-    <table id="skinTable">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Hydration</th>
-                <th>Texture</th>
-                <th>Redness</th>
-                <th>Acne</th>
-                <th>Notes</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
+        <table id="skinTable">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Hydration</th>
+                    <th>Texture</th>
+                    <th>Redness</th>
+                    <th>Acne</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
     </div>
 
-    <script>
-        function addEntry() {
-            const date = document.getElementById("date").value;
-            const hydration = document.getElementById("hydration").value;
-            const texture = document.getElementById("texture").value;
-            const redness = document.getElementById("redness").value;
-            const acne = document.getElementById("acne").value;
-            const notes = document.getElementById("notes").value;
-
-            const table = document.getElementById("skinTable").getElementsByTagName('tbody')[0];
-            const newRow = table.insertRow(table.rows.length);
-
-            const cell1 = newRow.insertCell(0);
-            const cell2 = newRow.insertCell(1);
-            const cell3 = newRow.insertCell(2);
-            const cell4 = newRow.insertCell(3);
-            const cell5 = newRow.insertCell(4);
-            const cell6 = newRow.insertCell(5);
-
-            cell1.innerHTML = date;
-            cell2.innerHTML = hydration;
-            cell3.innerHTML = texture;
-            cell4.innerHTML = redness;
-            cell5.innerHTML = acne;
-            cell6.innerHTML = notes;
-
-            document.getElementById("skinForm").reset(); //Clear the form
-        }
-    </script>
-    <script src="quizscript.js"></script>
-    <script>
-        if (localStorage.getItem("loggedIn") !== "true") {
-            alert("Please log in first!");
-            window.location.href = "login.html";
-        }
-    </script>
     <button class="bttn" onclick="logout()">Logout</button>
 
     <script>
+       const API_URL = 'http://localhost:3000/api';
+
+        async function addEntry() {
+            const entry = {
+                date: document.getElementById("date").value,
+                hydration: document.getElementById("hydration").value,
+                texture: document.getElementById("texture").value,
+                redness: document.getElementById("redness").value,
+                acne: document.getElementById("acne").value,
+                notes: document.getElementById("notes").value
+            };
+
+            try {
+                const res = await fetch(`${API_URL}/entry`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(entry)
+                });
+
+                if (res.ok) {
+                    alert("Entry added!");
+                    document.getElementById("skinForm").reset();
+                    fetchEntries();
+                } else {
+                    throw new Error("Failed to add entry.");
+                }
+            } catch (error) {
+                alert(error.message);
+            }
+        }
+
+        async function fetchEntries() {
+            try {
+                const res = await fetch(`${API_URL}/entries`);
+                const entries = await res.json();
+
+                const tbody = document.querySelector("#skinTable tbody");
+                tbody.innerHTML = '';
+                entries.forEach(entry => {
+                    const row = `<tr>
+                        <td>${entry.date}</td>
+                        <td>${entry.hydration}</td>
+                        <td>${entry.texture}</td>
+                        <td>${entry.redness}</td>
+                        <td>${entry.acne}</td>
+                        <td>${entry.notes}</td>
+                    </tr>`;
+                    tbody.innerHTML += row;
+                });
+            } catch (error) {
+                console.error("Error fetching entries:", error);
+            }
+        }
+
         function logout() {
             localStorage.removeItem("loggedIn");
-            window.location.href = "index.html";
+            window.location.href = "../index.html";
+        }
+
+        if (localStorage.getItem("loggedIn") !== "true") {
+            alert("Please log in!");
+            window.location.href = "login.html";
+        } else {
+            fetchEntries();
         }
     </script>
 </body>
